@@ -685,8 +685,8 @@
         </nav>
       </div><!-- br-pageheader -->
       <div class="pd-x-20 pd-sm-x-30 pd-t-20 pd-sm-t-30">
-        <h4 class="tx-gray-800 mg-b-5">Blank Page (Default Layout)</h4>
-        <p class="mg-b-0">Introducing Bracket admin template, the most handsome admin template of all time.</p>
+        <h4 class="tx-gray-800 mg-b-5">Pagina de Productos</h4>
+        <p class="mg-b-0">Aqui voy a configurar la pagina de productos</p>
       </div>
 
       <div class="br-pagebody">
@@ -694,6 +694,38 @@
         <!-- start you own content here -->
 
       </div><!-- br-pagebody -->
+
+      
+      <div class="br-section-wrapper">
+          <h6 class="tx-gray-800 tx-uppercase tx-bold tx-14 mg-b-10">MANTENIMIENTO DE PRODUCTOS</h6>
+          <p class="mg-b-25 mg-lg-b-50"></p>
+
+          <div class="table-wrapper">
+            <table id="datatable1" class="table display responsive nowrap">
+              <thead>
+                <tr>
+                  <th class="wd-15p">Nombre Producto</th>
+                  <th class="wd-15p">Accion</th>
+                  <th class="wd-20p">Accion</th>
+                </tr>
+              </thead>
+                  <tr>
+                    <td>Gaseosa Coca Cola 2L </td>
+                    <td><button type="button" class="btn btn-outline-primary btn-icon">Editar</td>
+                    <td><button type="button" class="btn btn-outline-danger btn-icon">Eliminar</td>
+                  </tr>
+
+                  <tr>
+                    <td>Agua en Botella 1L</td>
+                    <td><button type="button" class="btn btn-outline-primary btn-icon"><div class="fa fa-edit"></div></button></td>
+                    <td><button type="button" class="btn btn-outline-danger btn-icon"><div class="fa fa-edit"></div></button></td>
+                  </tr>
+              <tbody>
+
+              </tbody>
+            </table>
+          </div><!-- table-wrapper -->
+
 
     </div><!-- br-mainpanel -->
     <!-- ########## END: MAIN PANEL ########## -->
