@@ -1,9 +1,36 @@
-// function init(){
+var tabla;
 
-// }
+function init(){
+    $("#producto_form").on("submit", function (e){})
+ }
 
 $(document).ready(function(){
+}); 
 
+init();
+function guardaryeditar(e){
+    e.preventDefault();
+    var formData = new FormData($("#producto_form")[0]);
+    $.ajax({
+        url: "../../controller/producto.php?op=guardaryeditar",
+        type: "POST",
+        data: formData,
+        contentType: false,
+        processData: false,
+        success: function(datos){
+
+            $('#producto_form')[0].reset();
+            $("#modalmantenimiento").modal('hide');
+            $('#producto_data').DataTable().ajax.reload();
+
+            swal.fire(
+                'Registro!',
+                'El registro se guardó correctamente.',
+                'success'
+            )
+        }
+    });
+}
     tabla = $('#producto_data').dataTable({
 
         "aProcessing": true, // Activamos el procesamiento de datatables
@@ -60,7 +87,7 @@ $(document).ready(function(){
 
     }).DataTable();
 
-});
+
 
 
 $(document).on("click", "#btnNuevo", function(){
@@ -76,4 +103,3 @@ function eliminar(prod_id){
 
 }
 
-// init();
