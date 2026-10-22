@@ -28,13 +28,14 @@
     <meta name="description" content="Premium Quality and Responsive UI for Dashboard.">
     <meta name="author" content="ThemePixels">
 
-    <title>Bracket Responsive Bootstrap 4 Admin Template</title>
+    <title>SISTEMA VENTAS</title>
 
     <!-- vendor css -->
     <link href="../../public/lib/font-awesome/css/font-awesome.css" rel="stylesheet">
     <link href="../../public/lib/Ionicons/css/ionicons.css" rel="stylesheet">
     <link href="../../public/lib/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet">
     <link href="../../public/lib/jquery-switchbutton/jquery.switchButton.css" rel="stylesheet">
+    <link href="../../public/lib/datatables/jquery.dataTables.css" rel="stylesheet">
 
     <!-- Bracket CSS -->
     <link rel="stylesheet" href="../../public/css/bracket.css">
@@ -44,32 +45,35 @@
 
     <!-- ########## START: LEFT PANEL ########## -->
     <div class="br-logo"><a href=""><span>[</span>VENTAS<span>]</span></a></div>
+
     <div class="br-sideleft overflow-y-auto">
-      <label class="sidebar-label pd-x-15 mg-t-20">Navegacion</label>
+      <label class="sidebar-label pd-x-15 mg-t-20">Navegaciòn</label>
       <div class="br-sideleft-menu">
+
         <a href="../../index.php" class="br-menu-link">
           <div class="br-menu-item">
             <i class="menu-item-icon icon ion-ios-home-outline tx-22"></i>
             <span class="menu-item-label">Dashboard</span>
           </div><!-- menu-item -->
         </a><!-- br-menu-link -->
-    
+        
         <a href="#" class="br-menu-link">
           <div class="br-menu-item">
             <i class="menu-item-icon icon ion-ios-filing-outline tx-24"></i>
-            <span class="menu-item-label">UI Elements</span>
+            <span class="menu-item-label">Mantenimiento</span>
             <i class="menu-item-arrow fa fa-angle-down"></i>
           </div><!-- menu-item -->
         </a><!-- br-menu-link -->
 
         <ul class="br-menu-sub nav flex-column">
-          <li class="nav-item">
-            <a href="../...html" class="nav-link">Producto</a></li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Productos</a>
+            </li>
         </ul>
 
       </div><!-- br-sideleft-menu -->
 
-      <label class="sidebar-label pd-x-15 mg-t-25 mg-b-20 tx-info op-9">Information Summary</label>
+      <label class="sidebar-label pd-x-15 mg-t-25 mg-b-20 tx-info op-9">Sistema Ventas UniNorte</label>
 
       <div class="info-list">
         <div class="d-flex align-items-center justify-content-between pd-x-15">
@@ -115,7 +119,7 @@
         <div class="navicon-left hidden-md-down"><a id="btnLeftMenu" href=""><i class="icon ion-navicon-round"></i></a></div>
         <div class="navicon-left hidden-lg-up"><a id="btnLeftMenuMobile" href=""><i class="icon ion-navicon-round"></i></a></div>
         <div class="input-group hidden-xs-down wd-170 transition">
-          <input id="searchbox" type="text" class="form-control" placeholder="Search">
+          <input id="searchbox" type="text" class="form-control" placeholder="Buscar">
           <span class="input-group-btn">
             <button class="btn btn-secondary" type="button"><i class="fa fa-search"></i></button>
           </span>
@@ -680,28 +684,27 @@
     <div class="br-mainpanel">
       <div class="br-pageheader pd-y-15 pd-l-20">
         <nav class="breadcrumb pd-0 mg-0 tx-12">
-          <a class="breadcrumb-item" href="index.html">Bracket</a>
-          <span class="breadcrumb-item active">Blank Page</span>
+          <a class="breadcrumb-item" href="index.html">Mantenimiento</a>
+          <span class="breadcrumb-item active">Productos</span>
         </nav>
       </div><!-- br-pageheader -->
       <div class="pd-x-20 pd-sm-x-30 pd-t-20 pd-sm-t-30">
         <h4 class="tx-gray-800 mg-b-5">Pagina de Productos</h4>
-        <p class="mg-b-0">Aqui voy a configurar la pagina de productos</p>
+        <p class="mg-b-0">Aquì voy a configurar mi pagina de productos</p>
       </div>
 
       <div class="br-pagebody">
 
-        <!-- start you own content here -->
-
-      </div><!-- br-pagebody -->
-
-      
-      <div class="br-section-wrapper">
-          <h6 class="tx-gray-800 tx-uppercase tx-bold tx-14 mg-b-10">MANTENIMIENTO DE PRODUCTOS</h6>
-          <p class="mg-b-25 mg-lg-b-50"></p>
-
+        <div class="br-section-wrapper">
+          <h6 class="tx-gray-800 tx-uppercase tx-bold tx-14 mg-b-10">Mantenimiento de Productos</h6>
+          <!-- <p class="mg-b-25 mg-lg-b-50">Searching, ordering and paging goodness will be immediately added to the table, as shown in this example.</p> -->
+          <button id="btnNuevo" class="btn btn-oblong btn-primary btn-block mg-b-10">Nuevo Registro</button>
+          <!-- <button class="btn btn-pink btn-oblong active btn-block mg-b-10">Nuevo Registro</button> -->
+          
           <div class="table-wrapper">
-            <table id="datatable1" class="table display responsive nowrap">
+            
+            <table id="producto_data" class="table display responsive nowrap">
+              
               <thead>
                 <tr>
                   <th class="wd-15p">Nombre Producto</th>
@@ -709,26 +712,31 @@
                   <th class="wd-20p">Accion</th>
                 </tr>
               </thead>
-                  <tr>
-                    <td>Gaseosa Coca Cola 2L </td>
-                    <td><button type="button" class="btn btn-outline-primary btn-icon">Editar</td>
-                    <td><button type="button" class="btn btn-outline-danger btn-icon">Eliminar</td>
-                  </tr>
 
-                  <tr>
-                    <td>Agua en Botella 1L</td>
-                    <td><button type="button" class="btn btn-outline-primary btn-icon"><div class="fa fa-edit"></div></button></td>
-                    <td><button type="button" class="btn btn-outline-danger btn-icon"><div class="fa fa-edit"></div></button></td>
-                  </tr>
               <tbody>
+                <tr>
+                  <td>Gaseosa Coca Cola 2L</td>
+                  <td><button class="btn btn-primary">Editar</button></td>
+                  <td><button class="btn btn-danger">Eliminar</button></td>
+                </tr>
 
+                <tr>
+                  <td>Agua en Botella 1L</td>
+                  <td><button type="button" class="btn btn-outline-primary btn-icon"> <div class="fa fa-edit"></div> </button></td>
+                 <td><button type="button" class="btn btn-outline-danger btn-icon"> <div class="fa fa-trash"></div> </button></td>
+                </tr>
               </tbody>
-            </table>
-          </div><!-- table-wrapper -->
 
+            </table>
+
+          </div><!-- table-wrapper -->
+        </div>
+      </div><!-- br-pagebody -->
 
     </div><!-- br-mainpanel -->
     <!-- ########## END: MAIN PANEL ########## -->
+
+    <?php require_once ("modalmantenimiento.php"); ?>
 
     <script src="../../public/lib/jquery/jquery.js"></script>
     <script src="../../public/lib/popper.js/popper.js"></script>
@@ -739,6 +747,11 @@
     <script src="../../public/lib/jquery-switchbutton/jquery.switchButton.js"></script>
     <script src="../../public/lib/peity/jquery.peity.js"></script>
 
+    <script src="../../public/lib/datatables/jquery.dataTables.js"></script>
+    <script src="../../public/lib/datatables-responsive/dataTables.responsive.js"></script>
+
     <script src="../../public/js/bracket.js"></script>
+    <script src="mntproducto.js"></script>
+    
   </body>
 </html>
